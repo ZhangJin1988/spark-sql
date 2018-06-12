@@ -23,7 +23,7 @@ object DataFrameWC {
     val wordDf: DataFrame = wordsRdd.map(Word(_)).toDF()
 //    wordsRdd.map(t =>Word(t))
 
-    wordDf.registerTempTable("t_word")
+    wordDf.registerTempTable("5")
 
     val result: DataFrame = sqlContext.sql(" select name ,count(*) as cnts from t_word group by name order by cnts desc ")
     result.show()
